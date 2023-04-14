@@ -99,7 +99,7 @@ class FuckGPTMod(loader.Module):
         response = completion.choices[0].message.content
         await utils.answer(message, f"<code>{response}</code>" + self.strings("quest_k").format(args=f"<code>{args}</code>"))
         
-     async def agptcmd(self, message: Message):
+    async def agptcmd(self, message: Message):
         """<question> - question for Alice"""
         args = utils.get_args_raw(message)
         if not args:
