@@ -78,7 +78,7 @@ class FuckGPTMod(loader.Module):
         )
         response = completion.choices[0].message.content
         await utils.answer(message, f"<code>{response}</code>" + self.strings("quest_aim").format(args=f"<code>{args}</code>"))       
-        
+
     async def kgptcmd(self, message: Message):
         """<question> - question for Kelvin"""
         args = utils.get_args_raw(message)
@@ -98,7 +98,7 @@ class FuckGPTMod(loader.Module):
         )
         response = completion.choices[0].message.content
         await utils.answer(message, f"<code>{response}</code>" + self.strings("quest_k").format(args=f"<code>{args}</code>"))
-        
+
     async def agptcmd(self, message: Message):
         """<question> - question for Alice"""
         args = utils.get_args_raw(message)
