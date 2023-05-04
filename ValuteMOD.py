@@ -25,6 +25,7 @@ class ValuteMod(loader.Module):
                 replacements = {
                     "#GloryToUA": "",
                     "https://200rf.com/": "",
+                    "https://minusrus.com/ru": "",
                     "======": "",
                     "🇷🇺": "<emoji document_id=6323139226418284334>🇷🇺</emoji> ",
                     "🇧🇾": "<emoji document_id=6323582299539506720>🇧🇾</emoji> ",
