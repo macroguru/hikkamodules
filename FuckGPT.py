@@ -64,7 +64,7 @@ class FuckGPTMod(loader.Module):
         except openai.error.RateLimitError:
             await utils.answer(message, self.strings("limit_err"))
        
-    async def aimgptcmd(self, message: Message):
+    async def agptcmd(self, message: Message):
         """<question> - question for AIM"""
         args = utils.get_args_raw(message)
         if not args:
