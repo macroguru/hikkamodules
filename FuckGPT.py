@@ -17,7 +17,7 @@ class FuckGPTMod(loader.Module):
         "quest_aim": "\n\n\n<emoji document_id=5260341314095947411>👀</emoji><b> Your question to AIM was:</b> {args}",
         "args_err": "<emoji document_id=5260342697075416641>❌</emoji><b> You didn't ask a question GPT</b>",
         "conf_err": "<emoji document_id=5260342697075416641>❌</emoji><b> You didn't provide an api key. Specify it in .config FuckGPT</b>",
-        "limit_err": "<emoji document_id=5260342697075416641>❌</emoji><b> The limit of requests has been reached. Repeat the question in 20 seconds</b>",
+        "limit_err": "<emoji document_id=5260342697075416641>❌</emoji><b> Request limit has been reached. Wait 20sec and try again</b>",
     }
     strings_ru = {
         "wait": "<emoji document_id=5443038326535759644>💬</emoji><b> GPT генерирует ответ, подождите</b>",
@@ -27,7 +27,7 @@ class FuckGPTMod(loader.Module):
         "quest_aim": "\n\n\n<emoji document_id=5260341314095947411>👀</emoji><b> Ваш вопрос AIM был:</b> {args}",
         "args_err": "<emoji document_id=5260342697075416641>❌</emoji><b> Вы не задали вопрос GPT</b>",
         "conf_err": "<emoji document_id=5260342697075416641>❌</emoji><b> Вы не указали api key. Укажите его в .config FuckGPT</b>",
-        "limit_err": "<emoji document_id=5260342697075416641>❌</emoji><b> Достигнут лимит запросов в минуту. Повторите вопрос через 20 секунд</b>",
+        "limit_err": "<emoji document_id=5260342697075416641>❌</emoji><b> Достигнут лимит запросов. Повторите через 20 секунд</b>",
     }
 
     def __init__(self):
@@ -50,7 +50,7 @@ class FuckGPTMod(loader.Module):
         if self.config["api_key"] is None:
             await utils.answer(message, self.strings("conf_err"))
             return
-        await utils.answer(message, self.strings("wait").format(args=args))
+        message = await utils.answer(message, self.strings("wait").format(args=args))
         openai.api_key = self.config["api_key"]
         try:
             completion = openai.ChatCompletion.create(
@@ -73,7 +73,7 @@ class FuckGPTMod(loader.Module):
         if self.config["api_key"] is None:
             await utils.answer(message, self.strings("conf_err"))
             return
-        await utils.answer(message, self.strings("wait_aim").format(args=args))
+        message = await utils.answer(message, self.strings("wait_aim").format(args=args))
         openai.api_key = self.config["api_key"]
         try:
             completion = openai.ChatCompletion.create(
@@ -96,7 +96,7 @@ class FuckGPTMod(loader.Module):
         if self.config["api_key"] is None:
             await utils.answer(message, self.strings("conf_err"))
             return
-        await utils.answer(message, self.strings("wait").format(args=args))
+        message = await utils.answer(message, self.strings("wait").format(args=args))
         openai.api_key = self.config["api_key"]
         try:
             completion = openai.ChatCompletion.create(
