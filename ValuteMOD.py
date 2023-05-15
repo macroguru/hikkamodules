@@ -35,6 +35,7 @@ class ValuteMod(loader.Module):
                     "🇰🇿": "<emoji document_id=6323135275048371614>🇰🇿</emoji> ",
                     "🇹🇷": "<emoji document_id=6321003171678259486>🇹🇷</emoji> ",
                     "🇺🇿": "<emoji document_id=6323430017179059570>🇺🇿</emoji> ",
+                    "🇵🇱": "<emoji document_id=6323602387101550101>🇵🇱</emoji> ",
                 }
                 for key, value in replacements.items():
                     bot_response_text = bot_response_text.replace(key, value)
