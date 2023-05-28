@@ -1,3 +1,16 @@
+# ---------------------------------------------------------------------------------
+#  /\_/\  🌐 This module was loaded through https://t.me/hikkamods_bot
+# ( o.o )  🔓 Not licensed.
+#  > ^ <   ⚠️ Owner of heta.hikariatama.ru doesn't take any responsibilities or intellectual property rights regarding this script
+# ---------------------------------------------------------------------------------
+# Name: valute
+# Description: Valute converter
+# Author: hikariatama
+# Commands:
+# .val
+# ---------------------------------------------------------------------------------
+
+
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from .. import loader, utils
@@ -26,6 +39,7 @@ class ValuteMod(loader.Module):
                     "#GloryToUA": "",
                     "https://200rf.com/": "",
                     "https://minusrus.com/ru": "",
+                    "https://u24.gov.ua": "",
                     "======": "",
                     "🇷🇺": "<emoji document_id=6323139226418284334>🇷🇺</emoji> ",
                     "🇧🇾": "<emoji document_id=6323582299539506720>🇧🇾</emoji> ",
@@ -36,6 +50,7 @@ class ValuteMod(loader.Module):
                     "🇹🇷": "<emoji document_id=6321003171678259486>🇹🇷</emoji> ",
                     "🇺🇿": "<emoji document_id=6323430017179059570>🇺🇿</emoji> ",
                     "🇵🇱": "<emoji document_id=6323602387101550101>🇵🇱</emoji> ",
+                    "🇬🇧": "<emoji document_id=6323589145717376403>🇬🇧</emoji> ",
                 }
                 for key, value in replacements.items():
                     bot_response_text = bot_response_text.replace(key, value)
